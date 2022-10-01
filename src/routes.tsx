@@ -1,11 +1,12 @@
-import { Loading } from '@components';
+import { Loading, MainLayout } from '@components';
 import { loadable } from 'react-lazily/loadable';
 import { RouteObject } from 'react-router-dom';
 import { PATHS } from '@shared';
+import { Suspense } from 'react';
 
 const loadingFallback = { fallback: <Loading /> };
 
-const { WorkRequest } = loadable(() => import('@pages'), loadingFallback);
+const { WorkRequest } = loadable(async () => await import('@pages'), loadingFallback);
 
 const routes: RouteObject[] = [
   {
@@ -14,19 +15,35 @@ const routes: RouteObject[] = [
   },
   {
     path: `/*`,
-    element: <WorkRequest />,
+    element: (
+      <Suspense fallback={<Loading />}>
+        <MainLayout />
+      </Suspense>
+    ),
     children: [
       {
         path: `/*/`,
-        element: <WorkRequest />
+        element: (
+          <Suspense fallback={<Loading />}>
+            <WorkRequest />
+          </Suspense>
+        )
       },
       {
         path: `404`,
-        element: <WorkRequest />
+        element: (
+          <Suspense fallback={<Loading />}>
+            <WorkRequest />
+          </Suspense>
+        )
       },
       {
         path: `*`,
-        element: <WorkRequest />
+        element: (
+          <Suspense fallback={<Loading />}>
+            <WorkRequest />
+          </Suspense>
+        )
       }
     ]
   }

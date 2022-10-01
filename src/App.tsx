@@ -1,4 +1,4 @@
-import { ThemeProvider } from '@mui/material';
+import { CssBaseline, ThemeProvider } from '@mui/material';
 import { createCustomTheme, THEMES } from '@shared';
 import { useRoutes } from 'react-router-dom';
 import routes from './routes';
@@ -12,5 +12,10 @@ export const App = (): JSX.Element => {
     theme: THEMES.LIGHT
   });
 
-  return <ThemeProvider theme={theme}>{appRoutes}</ThemeProvider>;
+  return (
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+      {appRoutes}
+    </ThemeProvider>
+  );
 };

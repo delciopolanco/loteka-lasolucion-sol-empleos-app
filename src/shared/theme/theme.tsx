@@ -167,7 +167,7 @@ const themesOptions: Record<string, ThemeOptions> = {
         main: '#4caf50'
       },
       text: {
-        primary: '#172b4d',
+        primary: '#00b0dd',
         secondary: '#6b778c'
       },
       warning: {

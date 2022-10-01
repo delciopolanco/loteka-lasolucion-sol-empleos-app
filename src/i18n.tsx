@@ -4,12 +4,24 @@ import { initReactI18next } from 'react-i18next';
 const resources = {
   en: {
     translation: {
-      'Welcome to React': 'Welcome to React and react-i18next'
+      Welcome: 'Welcome to React and react-i18next',
+      fileUpload: {
+        title: 'This is the title',
+        isRequired: 'The file is required',
+        fileUpload: 'You need to upload the file',
+        howTo1: 'need to be like',
+        howTo2: 'and like this',
+        howTo3: 'and this',
+        supportedFileTypes: 'png',
+        qty: '1',
+        maxFileSize: '5MB'
+      },
+      'all Rights Reserved': 'all Rights Reserved'
     }
   },
   fr: {
     translation: {
-      'Welcome to React': 'Bienvenue à React et react-i18next'
+      Welcome: 'Bienvenue à React et react-i18next'
     }
   }
 };
