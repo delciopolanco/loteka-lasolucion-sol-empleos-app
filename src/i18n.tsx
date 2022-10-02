@@ -36,15 +36,15 @@ const resources = {
     translation: {
       Welcome: 'Bienvenido',
       fileUpload: {
-        title: 'Titulo',
-        isRequired: 'El archivo es requerido',
+        title: 'Cédula de identidad',
+        isRequired: 'Requerida',
         fileUpload: 'Cargar el archivo',
-        howTo1: 'blac bla',
-        howTo2: 'blac black 2',
-        howTo3: 'ablac bvlack 3',
-        supportedFileTypes: 'png',
-        qty: '1',
-        maxFileSize: '5MB'
+        howTo1: 'Arrastra tu archivo o',
+        howTo2: 'has click para adjuntar',
+        howTo3: 'desde tus dispositivo',
+        supportedFileTypes: 'Tipo de documento soportado: PNG, JPEG, JPG',
+        qty: 'Un solo archivo',
+        maxFileSize: '5MB máximo'
       },
       workRequestSteps: {
         selectLocation: 'Selecciona tu ubicación',
@@ -58,9 +58,16 @@ const resources = {
         zones: 'Municipios...',
         identification: 'Cédula',
         phone: 'Teléfono',
-        fullName: 'Nombre completo'
+        fullName: 'Nombre completo',
+        completeSteps: 'Completa los 3 pasos a continuación para aplicar a esta vacante',
+        confidential: 'Los datos suministrados se evaluarán de forma confidencial.',
+        youSentWorkRequest: '¡ Has enviado tu solicitud !',
+        afterSentWorkMessage:
+          'Estaremos evaluando tu datos y nos pondremos en contacto contigo a mayor brevedad.'
       },
       continue: 'Continuar',
+      applyToRol: 'Aplicar a la vacante',
+      createNewRequest: 'Crear nueva solicitud',
       back: 'Atrás',
       'all Rights Reserved': 'Todos los derechos reservados'
     }

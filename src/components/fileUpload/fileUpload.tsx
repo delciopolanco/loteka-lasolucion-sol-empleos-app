@@ -12,11 +12,11 @@ import {
   Typography,
   Stack
 } from '@mui/material';
-import { FileUploadIcon } from '@icons';
 import ImageIcon from '@mui/icons-material/Image';
 import AttachFileIcon from '@mui/icons-material/AttachFile';
 import CloseIcon from '@mui/icons-material/Close';
 import { BytesToSize } from '@utils';
+import Cedula from '@images/cedula.png';
 
 type FileUpload = {};
 
@@ -25,7 +25,9 @@ export const FileUpload: FC<FileUpload> = () => {
   const [files, setFiles] = useState<File[]>([]);
   const { getRootProps, getInputProps, isDragActive } = useDropzone({
     accept: {
-      'image/*': []
+      'image/png': ['.png'],
+      'image/jpg': ['.jpg'],
+      'image/jpeg': ['.jpeg']
     },
     onDrop: (acceptedFiles) => {
       setFiles(
@@ -100,7 +102,7 @@ export const FileUpload: FC<FileUpload> = () => {
             flexWrap: 'wrap',
             justifyContent: 'center',
             outline: 'none',
-            maxHeight: '280px',
+            maxHeight: '300px',
             width: '100%',
             p: 2,
             ...(isDragActive && {
@@ -118,16 +120,7 @@ export const FileUpload: FC<FileUpload> = () => {
           <input {...getInputProps()} />
           <Stack>
             <Box>
-              <Box
-                sx={{
-                  '& svg': {
-                    width: '75px',
-                    height: 'auto'
-                  }
-                }}
-              >
-                <FileUploadIcon />
-              </Box>
+              <img src={Cedula} width={120} height={80} />
             </Box>
             <Box sx={{ p: 2 }}>
               <Typography variant='h6'>{`${t('fileUpload.title')} (${t(

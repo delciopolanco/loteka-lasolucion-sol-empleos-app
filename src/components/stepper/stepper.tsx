@@ -1,31 +1,35 @@
 import { Children, FC, ReactNode } from 'react';
-import { useRecoilState, useRecoilValue } from 'recoil';
+import { useRecoilValue } from 'recoil';
 import { Step } from './step';
 import { stepCountSelector, currentStepSelector } from './state';
 import { Box, Stepper as MuiStepper, Paper, experimentalStyled } from '@mui/material';
 
 const Root = experimentalStyled('div')(({ theme }) => ({
-  maxWidth: 480,
-  minWidth: 320,
+  maxWidth: 800,
+  width: '100%',
   [theme.breakpoints.up('lg')]: { width: 'calc(100vw - 349px)' }
 }));
 
 interface StepperProps {
   children?: ReactNode[];
-  message?: ReactNode;
 }
-export const Stepper: FC<StepperProps> = ({ children, message }) => {
+export const Stepper: FC<StepperProps> = ({ children }) => {
   const stepCount = useRecoilValue(stepCountSelector);
-  const [currentStep] = useRecoilState(currentStepSelector);
+  const currentStep = useRecoilValue(currentStepSelector);
 
   if (!stepCount || Children.toArray(children).length !== stepCount) {
     return null;
   }
 
+  const renderChildren = () => {
+    if (!children) return;
+
+    return children[currentStep];
+  };
+
   return (
     <Root>
       <Paper sx={{ p: '20px' }}>
-        {message}
         <MuiStepper aria-label={'breadcrumb'} activeStep={currentStep}>
           {!!stepCount &&
             Array.from(Array(stepCount), (_, i) => i).map((i) => (
@@ -42,7 +46,7 @@ export const Stepper: FC<StepperProps> = ({ children, message }) => {
               />
             ))}
         </MuiStepper>
-        <Box sx={{ paddingTop: '40px' }}>{children ? children[currentStep] : null}</Box>
+        <Box sx={{ paddingTop: '40px' }}>{renderChildren()}</Box>
       </Paper>
     </Root>
   );

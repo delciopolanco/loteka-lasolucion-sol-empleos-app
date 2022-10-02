@@ -2,7 +2,11 @@ import { atom, selector, selectorFamily } from 'recoil';
 
 export const stepsAtom = atom({
   key: 'stepsAtoms',
-  default: ['Seleciona tu ubicación', 'Datos personales', 'Adjuntar archivos']
+  default: [
+    'Paso 1 (Seleciona tu ubicación)',
+    'Paso 2 (Datos personales)',
+    'Paso 3 (Adjuntar cédula)'
+  ]
 });
 
 export const currentStepAtom = atom({

@@ -4,6 +4,7 @@ import { currentStepSelector, stepCountSelector, stepNavigationSelector } from '
 import { Box, Button, CircularProgress } from '@mui/material';
 import { useTranslation } from 'react-i18next';
 import NavigateNextIcon from '@mui/icons-material/NavigateNext';
+import CheckIcon from '@mui/icons-material/Check';
 
 type StepperButtonsProps = {
   children?: React.ReactNode | null;
@@ -48,6 +49,7 @@ export const StepperButtons: FC<StepperButtonsProps> = ({
       setCurrentStep(currentStep - 1);
     }
   };
+
   return (
     <Box sx={{ display: 'grid', gridAutoFlow: 'column', justifyContent: 'end' }}>
       {showPreviousStep && prevStep && (
@@ -55,8 +57,19 @@ export const StepperButtons: FC<StepperButtonsProps> = ({
           {t('back')}
         </Button>
       )}
-      {additionalActions || null}
-      {nextStep && (
+      {currentStep >= 2 && (
+        <Button
+          sx={{ marginLeft: '1rem' }}
+          disabled={disableNext}
+          onClick={handleNextStep}
+          variant={'contained'}
+          startIcon={isLoadingNext && <CircularProgress style={{ width: 20, height: 20 }} />}
+          endIcon={<CheckIcon style={{ width: 20, height: 20 }} />}
+        >
+          {t('applyToRol')}
+        </Button>
+      )}
+      {nextStep && currentStep <= 2 && (
         <Button
           sx={{ marginLeft: '1rem' }}
           disabled={disableNext}
