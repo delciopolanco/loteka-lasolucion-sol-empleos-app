@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import { TextField, TextFieldProps, InputAdornment } from '@mui/material';
 import { useField } from 'formik';
-import { useCharCount } from '@shared';
+import { useCharCount } from '@hooks';
 import { HelperError } from '@components';
 
 type InputProps = TextFieldProps & {
@@ -31,7 +31,7 @@ export const Input: FC<InputProps> = ({
         InputProps={{
           endAdornment: showCharCount ? (
             <InputAdornment position={'end'}>{`${
-              value.length || 0
+              value?.length || 0
             } /${charCounts}`}</InputAdornment>
           ) : null
         }}

@@ -160,14 +160,14 @@ const themesOptions: Record<string, ThemeOptions> = {
       mode: 'light',
       primary: {
         contrastText: '#ffffff',
-        main: '#136AC1'
+        main: '#00b0dd'
       },
       success: {
         contrastText: '#ffffff',
         main: '#4caf50'
       },
       text: {
-        primary: '#00b0dd',
+        primary: '#555555',
         secondary: '#6b778c'
       },
       warning: {

@@ -48,7 +48,7 @@ export const Select: FC<SelectProps> = ({
             </MuiMenuItem>
           ))}
       </MuiSelect>
-      {!!error && <HelperError field={field.name} />}{' '}
+      {!!error && <HelperError field={field.name} />}
     </FormControl>
   );
 };

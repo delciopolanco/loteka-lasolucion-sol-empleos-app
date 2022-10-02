@@ -7,3 +7,4 @@ export * from './status';
 export * from './fileUpload';
 export * from './page';
 export * from './layout';
+export * from './stepper';
