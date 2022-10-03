@@ -78,7 +78,10 @@ const resources = {
       applyToRol: 'Aplicar a la vacante',
       createNewRequest: 'Crear nueva solicitud',
       back: 'Atrás',
-      'all Rights Reserved': 'Todos los derechos reservados'
+      'all Rights Reserved': 'Todos los derechos reservados',
+      vacancies: 'Vacantes',
+      candidates: 'Candidatos',
+      users: 'Usuarios'
     }
   },
   fr: {

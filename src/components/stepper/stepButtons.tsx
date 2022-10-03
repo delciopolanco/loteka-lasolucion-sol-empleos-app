@@ -17,7 +17,6 @@ type StepperButtonsProps = {
 };
 export const StepperButtons: FC<StepperButtonsProps> = ({
   showPreviousStep,
-  additionalActions,
   disableNext,
   isLoadingNext,
   nextHandler,

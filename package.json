@@ -27,6 +27,7 @@
     "react-i18next": "^11.18.6",
     "react-lazily": "^0.9.1",
     "react-number-format": "^4.9.3",
+    "react-perfect-scrollbar": "^1.5.8",
     "react-router-dom": "^6.4.1",
     "recoil": "^0.7.5",
     "yup": "^0.32.11"

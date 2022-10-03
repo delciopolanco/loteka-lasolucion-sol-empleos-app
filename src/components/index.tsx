@@ -8,3 +8,4 @@ export * from './fileUpload';
 export * from './page';
 export * from './layout';
 export * from './stepper';
+export * from './scrollbar';

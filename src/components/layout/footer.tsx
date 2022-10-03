@@ -2,9 +2,9 @@ import { Box, Container, Typography } from '@mui/material';
 import { FC, ReactNode } from 'react';
 import { useTranslation } from 'react-i18next';
 
-type MainFooterProps = { children?: ReactNode };
+type FooterProps = { children?: ReactNode };
 
-export const MainFooter: FC<MainFooterProps> = ({ children, ...others }) => {
+export const Footer: FC<FooterProps> = ({ children, ...others }) => {
   const { t } = useTranslation();
 
   return (

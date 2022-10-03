@@ -9,5 +9,9 @@ export const SIZES = {
 };
 
 export const PATHS = {
-  workRequest: '/workRequest'
+  workRequest: '/workRequest',
+  login: '/login',
+  home: '/home',
+  candidates: '/home/candidates',
+  vacancies: '/home/vacancies'
 };
