@@ -21,12 +21,6 @@ export const Stepper: FC<StepperProps> = ({ children }) => {
     return null;
   }
 
-  const renderChildren = () => {
-    if (!children) return;
-
-    return children[currentStep];
-  };
-
   return (
     <Root>
       <Paper sx={{ p: '20px' }}>
@@ -46,7 +40,7 @@ export const Stepper: FC<StepperProps> = ({ children }) => {
               />
             ))}
         </MuiStepper>
-        <Box sx={{ paddingTop: '40px' }}>{renderChildren()}</Box>
+        <Box sx={{ paddingTop: '40px' }}>{children && children[currentStep]}</Box>
       </Paper>
     </Root>
   );

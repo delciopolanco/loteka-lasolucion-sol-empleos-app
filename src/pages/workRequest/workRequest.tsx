@@ -1,21 +1,33 @@
-import { Box, Container } from '@mui/material';
+import { Box, Container, experimentalStyled } from '@mui/material';
 import { currentStepSelector } from '@components';
-import { Formik } from 'formik';
-import * as Yup from 'yup';
-import { useTranslation } from 'react-i18next';
+import { Formik, FormikValues } from 'formik';
 import { useRecoilValue } from 'recoil';
-import { WorkRequestStepper } from './features/workRequestStepper';
-import { WorkRequestComplete } from './features/workRequestComplete';
+import { WorkStepper } from './features/WorkStepper';
+import { Complete } from './features/complete';
 import { useScrollReset } from '@hooks';
+import { workRequestSchema } from './workRequest.schema';
+
+export const StepWrapper = experimentalStyled('div')(() => ({
+  display: 'flex',
+  flexDirection: 'column',
+  justifyContent: 'center',
+  margin: '0 auto'
+}));
+
+export const Root = experimentalStyled('div')(() => ({
+  backgroundColor: 'background.default',
+  display: 'flex',
+  flexDirection: 'column',
+  minHeight: '100vh'
+}));
 
 export const WorkRequest = () => {
-  const { t } = useTranslation();
   const currentStep = useRecoilValue(currentStepSelector);
 
   useScrollReset();
 
-  const submitHandler = (): void => {
-    console.log('submit');
+  const submitHandler = (v: FormikValues): void => {
+    console.log('submit', v);
   };
 
   return (
@@ -28,27 +40,19 @@ export const WorkRequest = () => {
         fullName: '',
         phone: ''
       }}
-      validationSchema={Yup.object().shape({})}
+      validationSchema={workRequestSchema[currentStep]}
       onSubmit={submitHandler}
     >
       {() => {
         return (
-          <Box
-            sx={{
-              backgroundColor: 'background.default',
-              display: 'flex',
-              flexDirection: 'column',
-              minHeight: '100vh'
-            }}
-          >
+          <Root>
             <Container sx={{ py: '80px', justifyContent: 'center' }}>
               <Box sx={{ display: 'grid', gridTemplateColumns: '1fr', gap: 2 }}>
-                {currentStep < 3 && <WorkRequestStepper />}
-
-                {currentStep >= 3 && <WorkRequestComplete />}
+                {currentStep < 3 && <WorkStepper />}
+                {currentStep >= 3 && <Complete />}
               </Box>
             </Container>
-          </Box>
+          </Root>
         );
       }}
     </Formik>

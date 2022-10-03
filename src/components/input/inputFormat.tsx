@@ -35,8 +35,9 @@ export const InputFormat: FC<InputFormatProps> = ({
           setFieldValue(name, value);
         }}
         onBlur={onBlur || field.onBlur}
+        error={Boolean(error)}
       />
-      {!!error && <HelperError field={name} withTouched />}
+      {!!error && <HelperError field={name} />}
     </>
   );
 };

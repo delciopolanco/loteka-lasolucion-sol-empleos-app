@@ -16,7 +16,7 @@ export interface Item {
 type SelectProps = MuiSelectProps & {
   items: Item[];
   label?: string;
-  name: string;
+  withTouched?: boolean;
 };
 
 export const Select: FC<SelectProps> = ({
@@ -26,19 +26,22 @@ export const Select: FC<SelectProps> = ({
   items,
   value,
   children,
-  name,
+  withTouched,
   ...r
 }) => {
   const labelId = uniqueId(label);
-  const [field, { error }] = useField(name);
+  const [field, { error }] = useField(r.name as string);
+
   if (children) {
     return <MuiSelect>{children}</MuiSelect>;
   }
+
   return (
     <FormControl fullWidth size={size}>
       {label && <InputLabel id={labelId}>{label}</InputLabel>}{' '}
       <MuiSelect
         size={size}
+        error={Boolean(error)}
         {...{ ...r, label, labelId, variant: 'outlined', autoWidth: autoWidth || false, value }}
       >
         {children ||
@@ -48,7 +51,7 @@ export const Select: FC<SelectProps> = ({
             </MuiMenuItem>
           ))}
       </MuiSelect>
-      {!!error && <HelperError field={field.name} />}
+      {!!error && <HelperError field={field.name} withTouched={withTouched} />}
     </FormControl>
   );
 };

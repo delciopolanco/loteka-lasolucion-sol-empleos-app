@@ -3,7 +3,7 @@ import { Box, experimentalStyled, Typography } from '@mui/material';
 import { useFormikContext } from 'formik';
 import { useTranslation } from 'react-i18next';
 import { useRecoilState } from 'recoil';
-import './workRequestComplete.css';
+import './complete.css';
 
 const Header = experimentalStyled('h3')(({ theme }) => ({
   fontSize: 28,
@@ -12,7 +12,7 @@ const Header = experimentalStyled('h3')(({ theme }) => ({
   margin: 0
 }));
 
-export const WorkRequestComplete = () => {
+export const Complete = () => {
   const { t } = useTranslation();
   const { resetForm } = useFormikContext();
   const setStepper = useRecoilState(currentStepSelector)[1];

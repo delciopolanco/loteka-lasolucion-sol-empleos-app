@@ -36,7 +36,7 @@ export const Input: FC<InputProps> = ({
           ) : null
         }}
       />
-      {!!error && <HelperError field={name} withTouched />}
+      {!!error && <HelperError field={name} />}
     </>
   );
 };

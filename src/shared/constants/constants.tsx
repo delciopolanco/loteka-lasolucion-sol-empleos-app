@@ -4,6 +4,10 @@ export const THEMES = {
   NATURE: 'NATURE'
 };
 
+export const SIZES = {
+  attachements: 500000
+};
+
 export const PATHS = {
   workRequest: '/workRequest'
 };

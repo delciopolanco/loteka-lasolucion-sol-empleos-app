@@ -24,7 +24,7 @@ const StatusElement: any = experimentalStyled('span')(({ theme, status }: any) =
   display: 'grid',
   alignItems: 'start',
   justifyItems: 'center',
-  color: theme.pallete[status][theme.pallete.mode]
+  color: theme.palette[status].main
 }));
 
 export const StatusIcon: FC<StatusProps> = ({ status = Status.ERROR }) => {

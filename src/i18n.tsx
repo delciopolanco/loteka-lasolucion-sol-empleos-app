@@ -63,7 +63,16 @@ const resources = {
         confidential: 'Los datos suministrados se evaluarán de forma confidencial.',
         youSentWorkRequest: '¡ Has enviado tu solicitud !',
         afterSentWorkMessage:
-          'Estaremos evaluando tu datos y nos pondremos en contacto contigo a mayor brevedad.'
+          'Estaremos evaluando tu datos y nos pondremos en contacto contigo a mayor brevedad.',
+        validations: {
+          city: 'Debe seleccionar su provincia en la lista',
+          zone: 'Debe seleccionar su municipio de la lista',
+          identification: 'Debe especificar su cédula',
+          phone: 'Debe especificar su móvil o teléfono',
+          fullName: 'Debe especificar su nombre completo',
+          attachementRequired: 'Debes adjuntar tu cédula de indentidad para continuar',
+          attachementMaxSize: 'El archivo es muy pesado, intenta con un archivo no mayor a los 5MB'
+        }
       },
       continue: 'Continuar',
       applyToRol: 'Aplicar a la vacante',

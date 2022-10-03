@@ -17,12 +17,18 @@ import AttachFileIcon from '@mui/icons-material/AttachFile';
 import CloseIcon from '@mui/icons-material/Close';
 import { BytesToSize } from '@utils';
 import Cedula from '@images/cedula.png';
+import { useField, useFormikContext } from 'formik';
+import { HelperError } from '@components';
 
-type FileUpload = {};
+type FileUpload = {
+  name: string;
+};
 
-export const FileUpload: FC<FileUpload> = () => {
+export const FileUpload: FC<FileUpload> = ({ name }) => {
   const { t } = useTranslation();
   const [files, setFiles] = useState<File[]>([]);
+  const [field, { error }] = useField(name);
+  const { setFieldValue } = useFormikContext();
   const { getRootProps, getInputProps, isDragActive } = useDropzone({
     accept: {
       'image/png': ['.png'],
@@ -37,6 +43,7 @@ export const FileUpload: FC<FileUpload> = () => {
           })
         )
       );
+      setFieldValue(field.name, acceptedFiles);
     }
   });
   return (
@@ -117,7 +124,7 @@ export const FileUpload: FC<FileUpload> = () => {
           }}
           {...getRootProps()}
         >
-          <input {...getInputProps()} />
+          <input name={field.name} {...getInputProps()} />
           <Stack>
             <Box>
               <img src={Cedula} width={120} height={80} />
@@ -141,6 +148,7 @@ export const FileUpload: FC<FileUpload> = () => {
               </Box>
             </Box>
           </Stack>
+          {!!error && <HelperError field={name} />}
         </Box>
       )}
     </div>
