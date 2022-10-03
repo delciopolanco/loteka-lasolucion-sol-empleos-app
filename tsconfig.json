@@ -31,7 +31,9 @@
       "@components/*": ["src/components/*"],
       "@components": ["src/components"],
       "@pages/*": ["src/pages/*"],
-      "@pages": ["src/pages"]
+      "@pages": ["src/pages"],
+      "@types/*": ["src/shared/types/*"],
+      "@types": ["src/shared/types"]
     }
   },
   "include": ["src"],

@@ -8,8 +8,6 @@ type Step3Props = {
 };
 
 export const Step3: FC<Step3Props> = ({ children }) => {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-
   return (
     <StepWrapper>
       <Grid container direction={'column'} spacing={3}>

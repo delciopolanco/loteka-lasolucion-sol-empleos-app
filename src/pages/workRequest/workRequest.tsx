@@ -2,10 +2,10 @@ import { Box, Container, experimentalStyled } from '@mui/material';
 import { currentStepSelector } from '@components';
 import { Formik, FormikValues } from 'formik';
 import { useRecoilValue } from 'recoil';
-import { WorkStepper } from './features/WorkStepper';
 import { Complete } from './features/complete';
 import { useScrollReset } from '@hooks';
 import { workRequestSchema } from './workRequest.schema';
+import { WorkStepper } from './features/workStepper';
 
 export const StepWrapper = experimentalStyled('div')(() => ({
   display: 'flex',

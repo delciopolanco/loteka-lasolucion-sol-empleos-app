@@ -1,9 +1,10 @@
 import { FormControl, Grid, Typography } from '@mui/material';
-import { useFormikContext } from 'formik';
+import { FormikContextType, useFormikContext } from 'formik';
 import { FC } from 'react';
 import { useTranslation } from 'react-i18next';
 import { StepWrapper } from '../workRequest';
 import { Input, InputFormat } from '@components';
+import { WorkRequest } from '@types';
 
 type Step2Props = {
   children: React.ReactNode;
@@ -11,8 +12,7 @@ type Step2Props = {
 
 export const Step2: FC<Step2Props> = ({ children }) => {
   const { t } = useTranslation();
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const { errors, handleChange }: any = useFormikContext();
+  const { errors, handleChange }: FormikContextType<WorkRequest> = useFormikContext();
 
   return (
     <StepWrapper>

@@ -1,6 +1,7 @@
 import { currentStepSelector, Stepper, StepperButtons } from '@components';
 import { Box, Typography } from '@mui/material';
-import { useFormikContext } from 'formik';
+import { WorkRequest } from '@types';
+import { FormikContextType, useFormikContext } from 'formik';
 import { isEmpty } from 'lodash/fp';
 import { FC } from 'react';
 import { useTranslation } from 'react-i18next';
@@ -13,14 +14,24 @@ type WorkStepperProps = {};
 
 export const WorkStepper: FC<WorkStepperProps> = () => {
   const { t } = useTranslation();
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const { values, validateForm }: any = useFormikContext();
+  const { values, validateForm, submitForm }: FormikContextType<WorkRequest> = useFormikContext();
   const [currentStep, setCurrentStep] = useRecoilState(currentStepSelector);
 
   const nextHandler = async () => {
     const validationErrors = await validateForm();
 
-    if (isEmpty(validationErrors)) setCurrentStep(currentStep + 1);
+    if (isEmpty(validationErrors)) {
+      setCurrentStep(currentStep + 1);
+    }
+  };
+
+  const submitHandler = async () => {
+    const validationErrors = await validateForm();
+
+    if (isEmpty(validationErrors)) {
+      setCurrentStep(currentStep + 1);
+      submitForm();
+    }
   };
 
   return (
@@ -42,7 +53,7 @@ export const WorkStepper: FC<WorkStepperProps> = () => {
             <StepperButtons showPreviousStep nextHandler={nextHandler} />
           </Step2>
           <Step3>
-            <StepperButtons showPreviousStep nextHandler={nextHandler} />
+            <StepperButtons showPreviousStep nextHandler={submitHandler} />
           </Step3>
         </Stepper>
       </Box>
