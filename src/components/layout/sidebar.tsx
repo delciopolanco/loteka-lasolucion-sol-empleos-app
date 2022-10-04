@@ -25,14 +25,14 @@ export const Sidebar: FC<SidebarProps> = (props) => {
       title: '',
       items: [
         {
-          title: t('vacancies'),
-          path: PATHS.vacancies,
-          icon: <WorkOutlineOutlinedIcon fontSize={'small'} />
-        },
-        {
           title: t('candidates'),
           path: PATHS.candidates,
           icon: <GroupAddOutlinedIcon fontSize={'small'} />
+        },
+        {
+          title: t('vacancies'),
+          path: PATHS.vacancies,
+          icon: <WorkOutlineOutlinedIcon fontSize={'small'} />
         }
       ]
     }

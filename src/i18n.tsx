@@ -74,6 +74,17 @@ const resources = {
           attachementMaxSize: 'El archivo es muy pesado, intenta con un archivo no mayor a los 5MB'
         }
       },
+      candidatesPage: {
+        filters: {
+          searchBy: 'Buscar por',
+          searchByCriteria: 'nombre, apellido, cédula...',
+          process: 'Por proceso',
+          city: 'Por pronvicia',
+          zone: 'Por municipio',
+          vacancy: 'Vacante',
+          orderBy: 'Ordernar por'
+        }
+      },
       continue: 'Continuar',
       applyToRol: 'Aplicar a la vacante',
       createNewRequest: 'Crear nueva solicitud',

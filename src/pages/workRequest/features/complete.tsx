@@ -1,9 +1,10 @@
-import { Button, currentStepSelector } from '@components';
+import { currentStepSelector } from '@components';
 import { Box, experimentalStyled, Typography } from '@mui/material';
 import { useFormikContext } from 'formik';
 import { useTranslation } from 'react-i18next';
 import { useRecoilState } from 'recoil';
 import './complete.css';
+import { Button } from '@components';
 
 const Header = experimentalStyled('h3')(({ theme }) => ({
   fontSize: 28,

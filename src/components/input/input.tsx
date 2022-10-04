@@ -1,22 +1,15 @@
 import { FC } from 'react';
-import { TextField, TextFieldProps, InputAdornment } from '@mui/material';
+import { TextField, InputAdornment, StandardTextFieldProps } from '@mui/material';
 import { useField } from 'formik';
 import { useCharCount } from '@hooks';
 import { HelperError } from '@components';
 
-type InputProps = TextFieldProps & {
+type InputProps = Omit<StandardTextFieldProps, 'variant'> & {
   name: string;
   showCharCount?: boolean;
 };
 
-export const Input: FC<InputProps> = ({
-  name,
-  variant = 'outlined',
-  showCharCount,
-  onChange,
-  onBlur,
-  ...others
-}) => {
+export const Input: FC<InputProps> = ({ name, showCharCount, onChange, onBlur, ...others }) => {
   const charCounts = useCharCount(name);
   const [field, { error, value }] = useField(name);
   return (
@@ -25,7 +18,6 @@ export const Input: FC<InputProps> = ({
         {...others}
         {...field}
         name={name}
-        variant={variant}
         onChange={onChange || field.onChange}
         onBlur={onBlur || field.onBlur}
         InputProps={{

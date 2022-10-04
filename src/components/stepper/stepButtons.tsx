@@ -1,10 +1,11 @@
 import { FC, ReactNode } from 'react';
 import { useRecoilState, useRecoilValue } from 'recoil';
 import { currentStepSelector, stepCountSelector, stepNavigationSelector } from './state';
-import { Box, Button, CircularProgress } from '@mui/material';
+import { Box, CircularProgress } from '@mui/material';
 import { useTranslation } from 'react-i18next';
 import NavigateNextIcon from '@mui/icons-material/NavigateNext';
 import CheckIcon from '@mui/icons-material/Check';
+import { Button } from '@components';
 
 type StepperButtonsProps = {
   children?: React.ReactNode | null;

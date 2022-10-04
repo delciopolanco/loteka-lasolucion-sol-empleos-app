@@ -1,8 +1,9 @@
 import { useState, FC, ReactNode } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Box, Button, Collapse, ListItem, ListItemProps } from '@mui/material';
+import { Box, Collapse, ListItem, ListItemProps } from '@mui/material';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
+import { Button } from '@components';
 
 type NavItemProps = ListItemProps & {
   active?: boolean;
