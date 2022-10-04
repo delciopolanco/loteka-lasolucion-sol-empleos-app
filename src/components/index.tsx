@@ -13,3 +13,4 @@ export * from './back';
 export * from './breadcrumbs';
 export * from './button';
 export * from './featureWrapper';
+export * from './labelMenu';

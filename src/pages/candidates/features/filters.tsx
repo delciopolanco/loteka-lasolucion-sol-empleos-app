@@ -1,4 +1,4 @@
-import { FeatureWrapper, Select } from '@components';
+import { FeatureWrapper, LabelMenu, Select } from '@components';
 import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
 import { InputAdornment, Grid, TextField, Stack, Typography } from '@mui/material';
 import { Formik, FormikValues } from 'formik';
@@ -48,7 +48,7 @@ export const Filters: FC<PropsFilters> = () => {
       {() => {
         return (
           <FeatureWrapper>
-            <Grid container spacing={1}>
+            <Grid container spacing={0.5}>
               <Grid item md={4} xs={12}>
                 <TextField
                   name={'byText'}
@@ -92,8 +92,15 @@ export const Filters: FC<PropsFilters> = () => {
                   label={t('candidatesPage.filters.zone')}
                 />
               </Grid>
-              <Grid item display={'flex'} alignItems={'center'}>
-                <Typography>{t('candidatesPage.filters.orderBy')}</Typography>
+              <Grid item md={2} xs={12} display={'flex'} alignItems={'center'}>
+                <LabelMenu
+                  label={t('candidatesPage.filters.orderBy')}
+                  options={[
+                    { label: 'Fecha', value: '1' },
+                    { label: 'Nombre', value: '2' },
+                    { label: 'Más Reciente', value: '3' }
+                  ]}
+                />
               </Grid>
             </Grid>
           </FeatureWrapper>
