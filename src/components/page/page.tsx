@@ -51,7 +51,7 @@ export const Page: FC<PageProps> = ({
         {headerText && (
           <Grid container justifyContent={'space-between'} spacing={3}>
             <Grid item>
-              <Typography color={'textPrimary'} variant={'h5'}>
+              <Typography color={'textSecondary'} variant={'h5'}>
                 {headerText}
               </Typography>
             </Grid>

@@ -14,3 +14,4 @@ export * from './breadcrumbs';
 export * from './button';
 export * from './featureWrapper';
 export * from './labelMenu';
+export * from './pagination';

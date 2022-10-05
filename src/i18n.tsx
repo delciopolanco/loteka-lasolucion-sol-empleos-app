@@ -92,7 +92,10 @@ const resources = {
       'all Rights Reserved': 'Todos los derechos reservados',
       vacancies: 'Vacantes',
       candidates: 'Candidatos',
-      users: 'Usuarios'
+      users: 'Usuarios',
+      rowsPerPage: 'Elementos por páginas',
+      of: 'de',
+      moreThan: 'más de'
     }
   },
   fr: {

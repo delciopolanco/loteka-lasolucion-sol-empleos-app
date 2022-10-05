@@ -99,8 +99,7 @@ const baseOptions: ThemeOptions = {
     button: {
       fontWeight: 600
     },
-    fontFamily:
-      '-apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji"',
+    fontFamily: ['Roboto', '"Helvetica Neue"', 'Arial', 'sans-serif'].join(','),
     h1: {
       fontWeight: 600,
       fontSize: '3.5rem'
@@ -173,6 +172,22 @@ const themesOptions: Record<string, ThemeOptions> = {
       warning: {
         contrastText: '#ffffff',
         main: '#ff9800'
+      },
+      grey: {
+        50: '#FAFAFA',
+        100: '#F5F5F5',
+        200: '#EEEEEE',
+        300: '#E0E0E0',
+        400: '#BDBDBD',
+        500: '#9E9E9E',
+        600: '#757575',
+        700: '#616161',
+        800: '#424242',
+        900: '#212121',
+        A100: '#D5D5D5',
+        A200: '#AAAAAA',
+        A400: '#616161',
+        A700: '#303030'
       }
     },
     shadows: lightShadows
