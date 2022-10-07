@@ -1,10 +1,10 @@
 export interface User {
-  id: string;
-  username: string;
-  name: string;
-  avatar: string;
-  role: string;
-  jobRole: string;
+  id?: string;
+  username?: string;
+  name?: string;
+  avatar?: string;
+  role?: string;
+  jobRole?: string;
 }
 
 export interface Auth {

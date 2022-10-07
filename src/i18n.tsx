@@ -102,7 +102,9 @@ const resources = {
       sesionData: 'Datos de sesión',
       workRequest: 'Solicitud de Empleo',
       workRequestConstraints: '(Los datos suministrados se manejarán de forma anónima)',
-      workRequestManager: 'Manejador de solicitud de empleos'
+      workRequestManager: 'Manejador de solicitud de empleos',
+      searchByName: 'Buscar por nombre o apellido',
+      closeSession: 'Cerrar sesión'
     }
   },
   fr: {

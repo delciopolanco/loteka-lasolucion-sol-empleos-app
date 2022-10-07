@@ -1,12 +1,14 @@
-import { PATHS } from '@shared';
+import { Auth, AuthSelector, PATHS } from '@shared';
 import { useEffect, FC } from 'react';
 import { Link as RouterLink, useLocation } from 'react-router-dom';
 import GroupAddOutlinedIcon from '@mui/icons-material/GroupAddOutlined';
 import PortraitOutlinedIcon from '@mui/icons-material/PortraitOutlined';
 import { useTranslation } from 'react-i18next';
 import { Box, Divider, Drawer, Theme, useMediaQuery, useTheme } from '@mui/material';
-import { Logo, Scrollbar } from '@components';
+import { Button, Logo, Scrollbar } from '@components';
 import { NavSection } from './navSection';
+import { Logoff } from '@icons';
+import { useRecoilState } from 'recoil';
 
 interface SidebarProps {
   onMobileClose: () => void;
@@ -19,6 +21,25 @@ export const Sidebar: FC<SidebarProps> = (props) => {
   const theme = useTheme();
   const lgUp = useMediaQuery((theme: Theme) => theme.breakpoints.up('lg'));
   const { t } = useTranslation();
+  const [_, setAuth] = useRecoilState(AuthSelector);
+
+  const handleCloseSession = () => {
+    setAuth({} as Auth);
+  };
+
+  const closeSessionButton = () => {
+    return (
+      <Button
+        sx={{ mb: 5 }}
+        startIcon={<Logoff fontSize={'small'} />}
+        variant={'outlined'}
+        color={'error'}
+        onClick={handleCloseSession}
+      >
+        {t('closeSession')}
+      </Button>
+    );
+  };
 
   const sections = [
     {
@@ -116,6 +137,7 @@ export const Sidebar: FC<SidebarProps> = (props) => {
         variant={'permanent'}
       >
         {content}
+        {closeSessionButton()}
       </Drawer>
     );
   }
@@ -134,6 +156,7 @@ export const Sidebar: FC<SidebarProps> = (props) => {
       variant={'temporary'}
     >
       {content}
+      {closeSessionButton()}
     </Drawer>
   );
 };

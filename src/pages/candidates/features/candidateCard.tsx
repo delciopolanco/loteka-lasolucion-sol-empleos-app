@@ -1,5 +1,5 @@
 import { FeatureWrapper } from '@components';
-import { Box, CardMedia, IconButton, Link, Typography, useTheme } from '@mui/material';
+import { Box, CardMedia, Link, Typography, useTheme } from '@mui/material';
 import { FC } from 'react';
 import Cedula from '@images/cedula.png';
 import PhoneOutlinedIcon from '@mui/icons-material/PhoneOutlined';

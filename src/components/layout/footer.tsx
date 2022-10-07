@@ -1,4 +1,3 @@
-import DeepCoding from '@images/deepCoding.png';
 import { Box, Container, Typography } from '@mui/material';
 import { FC, ReactNode } from 'react';
 import { useTranslation } from 'react-i18next';

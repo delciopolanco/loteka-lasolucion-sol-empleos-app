@@ -4,7 +4,11 @@ import { atom, selector } from 'recoil';
 export const AuthAtom = atom({
   key: 'auth',
   default: {
-    isAuthenticated: false
+    user: {
+      jobRole: 'Auxiliar de Recursos Humanos',
+      name: 'Juana Mendez'
+    },
+    isAuthenticated: true
   } as Auth
 });
 

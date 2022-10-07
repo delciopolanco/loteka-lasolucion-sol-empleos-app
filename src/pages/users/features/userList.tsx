@@ -3,6 +3,7 @@ import { FeatureWrapper } from '@components';
 import {
   Avatar,
   Box,
+  InputAdornment,
   Link,
   Table,
   TableBody,
@@ -10,10 +11,12 @@ import {
   TableHead,
   TablePagination,
   TableRow,
-  TableSortLabel
+  TableSortLabel,
+  TextField
 } from '@mui/material';
 import MoreVertOutlinedIcon from '@mui/icons-material/MoreVertOutlined';
 import { useTranslation } from 'react-i18next';
+import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
 
 type PropsUserList = {};
 
@@ -23,6 +26,19 @@ export const UserList: FC<PropsUserList> = () => {
     <FeatureWrapper>
       <Box sx={{ overflow: 'auto' }}>
         <Box sx={{ width: '100%', display: 'table', tableLayout: 'fixed' }}>
+          <Box sx={{ m: 1, maxWidth: '100%', width: 500 }}>
+            <TextField
+              fullWidth
+              label={t('searchByName')}
+              InputProps={{
+                startAdornment: (
+                  <InputAdornment position={'start'}>
+                    <SearchOutlinedIcon fontSize={'small'} />
+                  </InputAdornment>
+                )
+              }}
+            />
+          </Box>
           <Table>
             <TableHead>
               <TableRow>

@@ -4,7 +4,6 @@ import {
   Badge,
   Box,
   ButtonBase,
-  experimentalStyled,
   IconButton,
   styled,
   Toolbar,
@@ -16,9 +15,10 @@ import { Link as RouterLink } from 'react-router-dom';
 import { Logo } from './logo';
 import bgBlue from '@images/bgblue.png';
 import MenuIcon from '@mui/icons-material/Menu';
-import { AuthSelector } from '@shared';
+import { AuthSelector, getInitials } from '@shared';
 import { useRecoilValue } from 'recoil';
 import { useTranslation } from 'react-i18next';
+import { isEmpty } from 'lodash/fp';
 
 type NavBarProps = {
   children?: ReactNode;
@@ -73,27 +73,26 @@ export const NavBar: FC<NavBarProps> = ({ children, showHamburger, onSidebarMobi
             <MenuIcon fontSize={'medium'} sx={{ color: theme.palette.primary.contrastText }} />
           </IconButton>
         )}
-        {auth && !auth.isAuthenticated && (
-          <Box
-            sx={{
-              display: {
-                md: 'flex',
-                xs: 'none'
-              }
-            }}
-          >
-            <RouterLink to={'/'} style={{ width: '120px', height: '80px' }}>
-              <Logo
-                sx={{
-                  display: 'inline',
-                  '& img': {
-                    maxWidth: '100%'
-                  }
-                }}
-              />
-            </RouterLink>
-          </Box>
-        )}
+
+        <Box
+          sx={{
+            display: {
+              md: 'flex',
+              xs: 'none'
+            }
+          }}
+        >
+          <RouterLink to={'/'} style={{ width: '120px', height: '80px' }}>
+            <Logo
+              sx={{
+                display: 'inline',
+                '& img': {
+                  maxWidth: '100%'
+                }
+              }}
+            />
+          </RouterLink>
+        </Box>
 
         <Box>
           <Typography
@@ -106,6 +105,14 @@ export const NavBar: FC<NavBarProps> = ({ children, showHamburger, onSidebarMobi
           </Typography>
         </Box>
         <Box sx={{ flexGrow: 1, ml: 2 }}></Box>
+        <Box
+          sx={{ display: { md: 'initial', xs: 'none' } }}
+          textAlign={'right'}
+          color={'primary.contrastText'}
+        >
+          <Typography>{auth.user?.name}</Typography>
+          <Typography>{auth.user?.jobRole}</Typography>
+        </Box>
         <Box sx={{ ml: 2 }}>
           <Box component={ButtonBase} sx={{ alignItems: 'center', display: 'flex' }}>
             <StyledBadge
@@ -121,7 +128,7 @@ export const NavBar: FC<NavBarProps> = ({ children, showHamburger, onSidebarMobi
                   color: 'primary.main'
                 }}
               >
-                {auth.user?.name}
+                {auth && !isEmpty(auth.user) && getInitials(auth.user.name)}
               </Avatar>
             </StyledBadge>
           </Box>

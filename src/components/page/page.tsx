@@ -1,13 +1,5 @@
 import { FC, ReactNode } from 'react';
-import {
-  Box,
-  Breadcrumbs,
-  Container,
-  experimentalStyled,
-  Grid,
-  SxProps,
-  Typography
-} from '@mui/material';
+import { Box, Breadcrumbs, Container, experimentalStyled, Grid, Typography } from '@mui/material';
 import { Breadcrumb, BreadcrumbProps } from '@components/breadcrumbs';
 import { uniqueId } from 'lodash/fp';
 import { Back } from '..';

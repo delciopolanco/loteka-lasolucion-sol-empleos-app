@@ -1,22 +1,34 @@
 import { InternalLayout, Loading, MainLayout } from '@components';
 import { loadable } from 'react-lazily/loadable';
 import { RouteObject } from 'react-router-dom';
-import { PATHS } from '@shared';
+import { PATHS, AuthGuard } from '@shared';
 import { Suspense } from 'react';
 
 const loadingFallback = { fallback: <Loading /> };
 
-const { WorkRequest, Candidates, Vacancies, Users, CreateUser } = loadable(
+const { WorkRequest, Candidates, Users, CreateUser, Login } = loadable(
   async () => await import('@pages'),
   loadingFallback
 );
 
 const routes: RouteObject[] = [
   {
+    path: PATHS.login,
+    element: (
+      <Suspense fallback={<Loading />}>
+        <AuthGuard>
+          <Login />
+        </AuthGuard>
+      </Suspense>
+    )
+  },
+  {
     path: PATHS.home,
     element: (
       <Suspense fallback={<Loading />}>
-        <InternalLayout />
+        <AuthGuard>
+          <InternalLayout />
+        </AuthGuard>
       </Suspense>
     ),
     children: [

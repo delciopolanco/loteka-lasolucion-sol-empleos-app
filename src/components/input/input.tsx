@@ -4,7 +4,7 @@ import { useField } from 'formik';
 import { useCharCount } from '@hooks';
 import { HelperError } from '@components';
 
-type InputProps = Omit<StandardTextFieldProps, 'variant'> & {
+type InputProps = StandardTextFieldProps & {
   name: string;
   showCharCount?: boolean;
 };
