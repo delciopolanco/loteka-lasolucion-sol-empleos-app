@@ -95,7 +95,14 @@ const resources = {
       users: 'Usuarios',
       rowsPerPage: 'Elementos por páginas',
       of: 'de',
-      moreThan: 'más de'
+      moreThan: 'más de',
+      admin: 'Administración',
+      createNewUser: 'Crear nuevo usuario',
+      generalData: 'Datos generales',
+      sesionData: 'Datos de sesión',
+      workRequest: 'Solicitud de Empleo',
+      workRequestConstraints: '(Los datos suministrados se manejarán de forma anónima)',
+      workRequestManager: 'Manejador de solicitud de empleos'
     }
   },
   fr: {

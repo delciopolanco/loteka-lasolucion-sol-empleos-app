@@ -18,7 +18,7 @@ const InternalLayoutWrapper = experimentalStyled('div')(({ theme }) => ({
   display: 'flex',
   flex: '1 1 auto',
   overflow: 'hidden',
-  paddingTop: '64px',
+  paddingTop: '80px',
   [theme.breakpoints.up('lg')]: {
     paddingLeft: '280px'
   }

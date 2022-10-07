@@ -6,7 +6,7 @@ import { Suspense } from 'react';
 
 const loadingFallback = { fallback: <Loading /> };
 
-const { WorkRequest, Candidates, Vacancies } = loadable(
+const { WorkRequest, Candidates, Vacancies, Users, CreateUser } = loadable(
   async () => await import('@pages'),
   loadingFallback
 );
@@ -21,6 +21,14 @@ const routes: RouteObject[] = [
     ),
     children: [
       {
+        path: PATHS.home,
+        element: (
+          <Suspense fallback={<Loading />}>
+            <Candidates />
+          </Suspense>
+        )
+      },
+      {
         path: PATHS.candidates,
         element: (
           <Suspense fallback={<Loading />}>
@@ -29,12 +37,25 @@ const routes: RouteObject[] = [
         )
       },
       {
-        path: PATHS.vacancies,
-        element: (
-          <Suspense fallback={<Loading />}>
-            <Vacancies />
-          </Suspense>
-        )
+        path: PATHS.users(),
+        children: [
+          {
+            path: PATHS.users(),
+            element: (
+              <Suspense fallback={<Loading />}>
+                <Users />
+              </Suspense>
+            )
+          },
+          {
+            path: PATHS.usersCreate(),
+            element: (
+              <Suspense fallback={<Loading />}>
+                <CreateUser />
+              </Suspense>
+            )
+          }
+        ]
       }
     ]
   },

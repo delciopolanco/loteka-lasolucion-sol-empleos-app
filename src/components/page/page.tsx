@@ -1,16 +1,25 @@
 import { FC, ReactNode } from 'react';
-import { Box, Breadcrumbs, Container, experimentalStyled, Grid, Typography } from '@mui/material';
+import {
+  Box,
+  Breadcrumbs,
+  Container,
+  experimentalStyled,
+  Grid,
+  SxProps,
+  Typography
+} from '@mui/material';
 import { Breadcrumb, BreadcrumbProps } from '@components/breadcrumbs';
 import { uniqueId } from 'lodash/fp';
 import { Back } from '..';
+import { ContainerProps } from '@mui/system';
 
-type PageProps = {
+type PageProps = ContainerProps & {
   children?: ReactNode;
   breadCrumbs?: BreadcrumbProps[];
   backText?: string;
   backIcon?: boolean;
   headerText?: string;
-  headerActions?: ReactNode[];
+  headerActions?: ReactNode;
 };
 
 const PageRoot = experimentalStyled('div')(() => ({
@@ -31,7 +40,8 @@ export const Page: FC<PageProps> = ({
   backText,
   backIcon,
   headerText,
-  headerActions
+  headerActions,
+  ...others
 }) => {
   return (
     <PageRoot>
@@ -46,10 +56,10 @@ export const Page: FC<PageProps> = ({
         </Box>
       )}
 
-      {backText && <Back backText={backText} backIcon={backIcon} />}
-      <Container maxWidth={'xl'}>
+      <Container {...others}>
+        {backText && <Back backText={backText} backIcon={backIcon} />}
         {headerText && (
-          <Grid container justifyContent={'space-between'} spacing={3}>
+          <Grid container alignItems={'baseline'} justifyContent={'space-between'} spacing={3}>
             <Grid item>
               <Typography color={'textSecondary'} variant={'h5'}>
                 {headerText}
@@ -57,7 +67,7 @@ export const Page: FC<PageProps> = ({
             </Grid>
             {headerActions && (
               <Grid item>
-                <Box sx={{ m: -1 }}>{headerActions}</Box>
+                <Box>{headerActions}</Box>
               </Grid>
             )}
           </Grid>

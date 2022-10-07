@@ -17,8 +17,7 @@ export const StepWrapper = experimentalStyled('div')(() => ({
 export const Root = experimentalStyled('div')(() => ({
   backgroundColor: 'background.default',
   display: 'flex',
-  flexDirection: 'column',
-  minHeight: '100vh'
+  flexDirection: 'column'
 }));
 
 export const WorkRequest = () => {
@@ -46,7 +45,7 @@ export const WorkRequest = () => {
       {() => {
         return (
           <Root>
-            <Container sx={{ py: '80px', justifyContent: 'center' }}>
+            <Container sx={{ pt: '80px', justifyContent: 'center' }}>
               <Box sx={{ display: 'grid', gridTemplateColumns: '1fr', gap: 2 }}>
                 {currentStep < 3 && <WorkStepper />}
                 {currentStep >= 3 && <Complete />}

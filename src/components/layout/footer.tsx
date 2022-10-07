@@ -1,3 +1,4 @@
+import DeepCoding from '@images/deepCoding.png';
 import { Box, Container, Typography } from '@mui/material';
 import { FC, ReactNode } from 'react';
 import { useTranslation } from 'react-i18next';
@@ -8,9 +9,11 @@ export const Footer: FC<FooterProps> = ({ children, ...others }) => {
   const { t } = useTranslation();
 
   return (
-    <Box sx={{ backgroundColor: 'background.default', pb: 6, pt: { md: 15, xs: 6 } }} {...others}>
-      <Container maxWidth={'lg'}>
-        <Typography>{t('all Rights Reserved')}</Typography>
+    <Box sx={{ backgroundColor: 'background.default', pt: 2 }} {...others}>
+      <Container maxWidth={'lg'} sx={{ display: 'flex', justifyContent: 'center' }}>
+        <Typography variant={'body2'} sx={{ fontWeight: 'bold' }}>
+          {t('Powered By DeepCooding')}
+        </Typography>
         {children}
       </Container>
     </Box>

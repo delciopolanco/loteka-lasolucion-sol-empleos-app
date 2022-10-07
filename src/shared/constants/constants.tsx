@@ -13,5 +13,7 @@ export const PATHS = {
   login: '/login',
   home: '/home',
   candidates: '/home/candidates',
-  vacancies: '/home/vacancies'
+  vacancies: '/home/vacancies',
+  users: () => `${PATHS.home}/users`,
+  usersCreate: () => `${PATHS.home}/users/new`
 };

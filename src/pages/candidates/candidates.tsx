@@ -17,7 +17,7 @@ export const Candidates: FC<CandidatesProps> = () => {
   };
 
   return (
-    <Page headerText={t('candidates')}>
+    <Page headerText={`100 ${t('candidates')}`}>
       <Formik initialValues={{}} onSubmit={onSearchHandle}>
         {() => {
           return (
@@ -27,15 +27,15 @@ export const Candidates: FC<CandidatesProps> = () => {
               </Grid>
               <Grid my={1}>
                 <Pagination
-                  sx={{ display: 'flex', justifyContent: 'center' }}
+                  sx={{ display: 'flex', justifyContent: { md: 'flex-end', xs: 'center' } }}
                   variant={'outlined'}
                   color='primary'
-                  count={10}
+                  count={8}
                   page={1}
                 />
               </Grid>
               <Grid item md={12} container spacing={2} sx={{ p: 0 }}>
-                {[1, 1, 1, 1, 1, 1, 1, 1, 1, 1].map((e, i) => (
+                {[1, 1, 1, 1].map((e, i) => (
                   <Grid key={i} item md={3} xs={6}>
                     <CadidateCard />
                   </Grid>

@@ -2,7 +2,7 @@ import { experimentalStyled } from '@mui/material';
 import { FC, ReactNode } from 'react';
 import { Outlet } from 'react-router-dom';
 import { Footer } from './footer';
-import { NavBar } from './navBar';
+import { ExternalNavBarvBar } from './externalNavBar';
 
 type MainLayoutProps = {
   children?: ReactNode;
@@ -10,14 +10,14 @@ type MainLayoutProps = {
 
 const MainLayoutRoot = experimentalStyled('div')(({ theme }) => ({
   height: '100%',
-  paddingTop: 64,
+  paddingTop: 110,
   backgroundColor: theme.palette.background.default
 }));
 
 export const MainLayout: FC<MainLayoutProps> = ({ children }) => {
   return (
     <MainLayoutRoot>
-      <NavBar />
+      <ExternalNavBarvBar />
       {children || <Outlet />}
       <Footer />
     </MainLayoutRoot>

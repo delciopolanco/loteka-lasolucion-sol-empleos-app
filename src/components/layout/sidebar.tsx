@@ -2,7 +2,7 @@ import { PATHS } from '@shared';
 import { useEffect, FC } from 'react';
 import { Link as RouterLink, useLocation } from 'react-router-dom';
 import GroupAddOutlinedIcon from '@mui/icons-material/GroupAddOutlined';
-import WorkOutlineOutlinedIcon from '@mui/icons-material/WorkOutlineOutlined';
+import PortraitOutlinedIcon from '@mui/icons-material/PortraitOutlined';
 import { useTranslation } from 'react-i18next';
 import { Box, Divider, Drawer, Theme, useMediaQuery, useTheme } from '@mui/material';
 import { Logo, Scrollbar } from '@components';
@@ -28,11 +28,16 @@ export const Sidebar: FC<SidebarProps> = (props) => {
           title: t('candidates'),
           path: PATHS.candidates,
           icon: <GroupAddOutlinedIcon fontSize={'small'} />
-        },
+        }
+      ]
+    },
+    {
+      title: t('admin'),
+      items: [
         {
-          title: t('vacancies'),
-          path: PATHS.vacancies,
-          icon: <WorkOutlineOutlinedIcon fontSize={'small'} />
+          title: t('users'),
+          path: PATHS.users(),
+          icon: <PortraitOutlinedIcon fontSize={'small'} />
         }
       ]
     }
@@ -103,8 +108,8 @@ export const Sidebar: FC<SidebarProps> = (props) => {
         PaperProps={{
           sx: {
             backgroundColor: 'background.paper',
-            height: 'calc(100% - 70px) !important',
-            top: '70px !Important',
+            height: 'calc(100% - 80px) !important',
+            top: '80px !Important',
             width: 280
           }
         }}
