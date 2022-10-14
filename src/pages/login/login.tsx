@@ -5,7 +5,8 @@ import office from '@images/office.avif';
 import { Formik, FormikValues } from 'formik';
 import bgBlue from '@images/bgblue.png';
 import { useRecoilState } from 'recoil';
-import { AuthSelector } from '@shared';
+import { AuthSelector, PATHS } from '@shared';
+import { useNavigate } from 'react-router-dom';
 
 type PropsLogin = {
   url?: string;
@@ -38,15 +39,24 @@ const Image = experimentalStyled('div')(() => ({
 
 export const Login: FC<PropsLogin> = () => {
   const [_, setAuth] = useRecoilState(AuthSelector);
+  const navigate = useNavigate();
+
   const onSubmit = (v: FormikValues) => {
     setAuth({
       isAuthenticated: true,
       user: { name: 'Juana Mendez', jobRole: 'Auxiliar de Recursos Humanos' }
     });
+    navigate(PATHS.home);
   };
 
   return (
-    <Formik initialValues={{}} onSubmit={onSubmit}>
+    <Formik
+      initialValues={{
+        username: '',
+        password: ''
+      }}
+      onSubmit={onSubmit}
+    >
       {({ submitForm }) => {
         return (
           <LoginRoot>
@@ -57,7 +67,7 @@ export const Login: FC<PropsLogin> = () => {
                   sx={{
                     display: 'grid',
                     gridTemplateColumns: '1fr',
-                    gap: 2,
+                    gap: 5,
                     justifyContent: 'center',
                     p: 5
                   }}
@@ -68,7 +78,9 @@ export const Login: FC<PropsLogin> = () => {
                         backgroundImage: `url(${bgBlue})`,
                         color: 'text.secondary',
                         width: 200,
-                        height: 100
+                        height: 100,
+                        display: 'flex',
+                        justifyContent: 'center'
                       }}
                     />
                   </Box>

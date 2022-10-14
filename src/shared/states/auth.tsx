@@ -3,13 +3,7 @@ import { atom, selector } from 'recoil';
 
 export const AuthAtom = atom({
   key: 'auth',
-  default: {
-    user: {
-      jobRole: 'Auxiliar de Recursos Humanos',
-      name: 'Juana Mendez'
-    },
-    isAuthenticated: true
-  } as Auth
+  default: {} as Auth
 });
 
 export const AuthSelector = selector<Auth>({

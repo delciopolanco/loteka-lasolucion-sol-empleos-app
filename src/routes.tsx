@@ -16,9 +16,7 @@ const routes: RouteObject[] = [
     path: PATHS.login,
     element: (
       <Suspense fallback={<Loading />}>
-        <AuthGuard>
-          <Login />
-        </AuthGuard>
+        <Login />
       </Suspense>
     )
   },
