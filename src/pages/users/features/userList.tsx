@@ -63,16 +63,17 @@ export const UserList: FC<PropsUserList> = () => {
               <TableRow hover>
                 <TableCell>
                   <Box sx={{ display: 'flex', alignItems: 'center' }}>
-                    <Avatar sx={{ height: 42, width: 42, backgroundColor: 'primary.main' }}>
+                    <Avatar
+                      sx={{
+                        height: 42,
+                        width: 42,
+                        backgroundColor: 'primary.main'
+                      }}
+                    >
                       MD
                     </Avatar>
                     <Box sx={{ ml: 1 }}>
-                      <Link
-                        color={'inherit'}
-                        variant={'subtitle2'}
-                        component={'a'}
-                        sx={{ cursor: 'pointer' }}
-                      >
+                      <Link color={'inherit'} variant={'subtitle2'} component={'a'} sx={{ cursor: 'pointer' }}>
                         Maria Dominguez
                       </Link>
                     </Box>
@@ -88,7 +89,13 @@ export const UserList: FC<PropsUserList> = () => {
               <TableRow hover>
                 <TableCell>
                   <Box sx={{ display: 'flex', alignItems: 'center' }}>
-                    <Avatar sx={{ height: 42, width: 42, backgroundColor: 'primary.main' }}>
+                    <Avatar
+                      sx={{
+                        height: 42,
+                        width: 42,
+                        backgroundColor: 'primary.main'
+                      }}
+                    >
                       MD
                     </Avatar>
                     <Box sx={{ ml: 1 }}>
@@ -108,7 +115,13 @@ export const UserList: FC<PropsUserList> = () => {
               <TableRow hover>
                 <TableCell>
                   <Box sx={{ display: 'flex', alignItems: 'center' }}>
-                    <Avatar sx={{ height: 42, width: 42, backgroundColor: 'primary.main' }}>
+                    <Avatar
+                      sx={{
+                        height: 42,
+                        width: 42,
+                        backgroundColor: 'primary.main'
+                      }}
+                    >
                       MD
                     </Avatar>
                     <Box sx={{ ml: 1 }}>

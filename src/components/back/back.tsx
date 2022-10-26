@@ -26,7 +26,12 @@ export const Back: FC<BackProps> = ({ backText, backIcon, to }) => {
       underline={'none'}
       component={'a'}
       onClick={onClickHandler}
-      sx={{ display: 'flex', alignItems: 'center', cursor: 'pointer', fontWeight: 600 }}
+      sx={{
+        display: 'flex',
+        alignItems: 'center',
+        cursor: 'pointer',
+        fontWeight: 600
+      }}
     >
       {backIcon || <KeyboardBackspaceIcon fontSize={'small'} />}
       <Box ml={2}>{backText}</Box>

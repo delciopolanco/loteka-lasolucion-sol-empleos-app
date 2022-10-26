@@ -83,73 +83,27 @@ export const FileUploadIcon = () => {
         transform={'translate(-236 -51.81)'}
         fill={'#fcfcfc'}
       />
-      <polygon
-        points={'533.09 269.19 6.91 269.19 6.91 94.5 92 5.5 533.09 5.5 533.09 269.19'}
-        fill={'#fcfcfc'}
-      />
+      <polygon points={'533.09 269.19 6.91 269.19 6.91 94.5 92 5.5 533.09 5.5 533.09 269.19'} fill={'#fcfcfc'} />
       <rect x={'357.59'} y={'58.59'} width={'142.73'} height={'10.89'} fill={'#e0e0e0'} />
       <rect x={'357.59'} y={'98.59'} width={'142.73'} height={'10.89'} fill={'#e0e0e0'} />
       <rect x={'357.59'} y={'138.59'} width={'142.73'} height={'10.89'} fill={'#e0e0e0'} />
-      <rect
-        x={'357.59'}
-        y={'178.59'}
-        width={'142.73'}
-        height={'10.89'}
-        fill={'#5664D2'}
-        opacity={'0.5'}
-      />
+      <rect x={'357.59'} y={'178.59'} width={'142.73'} height={'10.89'} fill={'#5664D2'} opacity={'0.5'} />
       <rect x={'357.59'} y={'218.59'} width={'142.73'} height={'10.89'} fill={'#e0e0e0'} />
       <rect x={'357.59'} y={'258.59'} width={'142.73'} height={'10.89'} fill={'#e0e0e0'} />
-      <rect
-        x={'84.72'}
-        y={'343.59'}
-        width={'142.73'}
-        height={'10.89'}
-        fill={'#5664D2'}
-        opacity={'0.5'}
-      />
+      <rect x={'84.72'} y={'343.59'} width={'142.73'} height={'10.89'} fill={'#5664D2'} opacity={'0.5'} />
       <rect x={'84.72'} y={'387.13'} width={'142.73'} height={'10.89'} fill={'#e0e0e0'} />
-      <rect
-        x={'84.72'}
-        y={'365.36'}
-        width={'372.56'}
-        height={'10.89'}
-        fill={'#69f0ae'}
-        opacity={'0.5'}
-      />
-      <rect
-        x={'84.72'}
-        y={'448.82'}
-        width={'142.73'}
-        height={'10.89'}
-        fill={'#5664D2'}
-        opacity={'0.5'}
-      />
+      <rect x={'84.72'} y={'365.36'} width={'372.56'} height={'10.89'} fill={'#69f0ae'} opacity={'0.5'} />
+      <rect x={'84.72'} y={'448.82'} width={'142.73'} height={'10.89'} fill={'#5664D2'} opacity={'0.5'} />
       <rect x={'84.72'} y={'492.37'} width={'142.73'} height={'10.89'} fill={'#e0e0e0'} />
       <rect x={'84.72'} y={'470.59'} width={'372.56'} height={'10.89'} fill={'#e0e0e0'} />
-      <rect
-        x={'84.72'}
-        y={'554.06'}
-        width={'142.73'}
-        height={'10.89'}
-        fill={'#5664D2'}
-        opacity={'0.5'}
-      />
+      <rect x={'84.72'} y={'554.06'} width={'142.73'} height={'10.89'} fill={'#5664D2'} opacity={'0.5'} />
       <rect x={'84.72'} y={'597.6'} width={'142.73'} height={'10.89'} fill={'#e0e0e0'} />
       <rect x={'84.72'} y={'575.83'} width={'305.41'} height={'10.89'} fill={'#e0e0e0'} />
       <polygon points={'310 281 50 281 50 54 59 43 79.75 43 310 43 310 281'} fill={'#5664D2'} />
-      <polygon
-        points={'4.91 96.5 94 96.5 94 3.5 4.91 96.5'}
-        fill={'url(#b071ddd1-33a6-4512-b8b6-1cee124e019a)'}
-      />
+      <polygon points={'4.91 96.5 94 96.5 94 3.5 4.91 96.5'} fill={'url(#b071ddd1-33a6-4512-b8b6-1cee124e019a)'} />
       <polygon points={'6.91 94.5 92 94.5 92 5.5 6.91 94.5'} fill={'#f5f5f5'} />
       <g opacity={'0.5'}>
-        <circle
-          cx={'627.87'}
-          cy={'696.25'}
-          r={'100.13'}
-          fill={'url(#d200849e-56d5-45c5-85eb-e9070e3330a6)'}
-        />
+        <circle cx={'627.87'} cy={'696.25'} r={'100.13'} fill={'url(#d200849e-56d5-45c5-85eb-e9070e3330a6)'} />
       </g>
       <circle cx={'627.87'} cy={'696.25'} r={'93.72'} fill={'#3ad29f'} />
       <g opacity={'0.5'}>
@@ -183,58 +137,20 @@ export const FileUploadIcon = () => {
         transform={'translate(-236 -51.81)'}
         fill={'#fff'}
       />
-      <polygon
-        points={'638.09 314.19 111.91 314.19 111.91 139.5 197 50.5 638.09 50.5 638.09 314.19'}
-        fill={'#fff'}
-      />
+      <polygon points={'638.09 314.19 111.91 314.19 111.91 139.5 197 50.5 638.09 50.5 638.09 314.19'} fill={'#fff'} />
       <rect x={'462.59'} y={'103.59'} width={'142.73'} height={'10.89'} fill={'#e0e0e0'} />
       <rect x={'462.59'} y={'143.59'} width={'142.73'} height={'10.89'} fill={'#e0e0e0'} />
       <rect x={'462.59'} y={'183.59'} width={'142.73'} height={'10.89'} fill={'#e0e0e0'} />
-      <rect
-        x={'462.59'}
-        y={'223.59'}
-        width={'142.73'}
-        height={'10.89'}
-        fill={'#5664D2'}
-        opacity={'0.5'}
-      />
+      <rect x={'462.59'} y={'223.59'} width={'142.73'} height={'10.89'} fill={'#5664D2'} opacity={'0.5'} />
       <rect x={'462.59'} y={'263.59'} width={'142.73'} height={'10.89'} fill={'#e0e0e0'} />
       <rect x={'462.59'} y={'303.59'} width={'142.73'} height={'10.89'} fill={'#e0e0e0'} />
-      <rect
-        x={'189.72'}
-        y={'388.59'}
-        width={'142.73'}
-        height={'10.89'}
-        fill={'#5664D2'}
-        opacity={'0.5'}
-      />
+      <rect x={'189.72'} y={'388.59'} width={'142.73'} height={'10.89'} fill={'#5664D2'} opacity={'0.5'} />
       <rect x={'189.72'} y={'432.13'} width={'142.73'} height={'10.89'} fill={'#e0e0e0'} />
-      <rect
-        x={'189.72'}
-        y={'410.36'}
-        width={'372.56'}
-        height={'10.89'}
-        fill={'#69f0ae'}
-        opacity={'0.5'}
-      />
-      <rect
-        x={'189.72'}
-        y={'493.82'}
-        width={'142.73'}
-        height={'10.89'}
-        fill={'#5664D2'}
-        opacity={'0.5'}
-      />
+      <rect x={'189.72'} y={'410.36'} width={'372.56'} height={'10.89'} fill={'#69f0ae'} opacity={'0.5'} />
+      <rect x={'189.72'} y={'493.82'} width={'142.73'} height={'10.89'} fill={'#5664D2'} opacity={'0.5'} />
       <rect x={'189.72'} y={'537.37'} width={'142.73'} height={'10.89'} fill={'#e0e0e0'} />
       <rect x={'189.72'} y={'515.59'} width={'372.56'} height={'10.89'} fill={'#e0e0e0'} />
-      <rect
-        x={'189.72'}
-        y={'599.06'}
-        width={'142.73'}
-        height={'10.89'}
-        fill={'#5664D2'}
-        opacity={'0.5'}
-      />
+      <rect x={'189.72'} y={'599.06'} width={'142.73'} height={'10.89'} fill={'#5664D2'} opacity={'0.5'} />
       <rect x={'189.72'} y={'642.6'} width={'142.73'} height={'10.89'} fill={'#e0e0e0'} />
       <rect x={'189.72'} y={'620.83'} width={'305.41'} height={'10.89'} fill={'#e0e0e0'} />
       <polygon points={'415 326 155 326 155 99 164 88 184.75 88 415 88 415 326'} fill={'#5664D2'} />

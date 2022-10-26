@@ -14,11 +14,14 @@ export const CadidateCard: FC<PropsCadidateCard> = () => {
         AGENTE DE SERVICIO
       </Typography>
 
-      <Box sx={{ background: theme.palette.primary.main, padding: 1, borderRadius: '16px' }}>
-        <CardMedia
-          image={Cedula}
-          sx={{ height: '100px', width: '100%', maxWidth: 200, margin: 'auto' }}
-        ></CardMedia>
+      <Box
+        sx={{
+          background: theme.palette.primary.main,
+          padding: 1,
+          borderRadius: '16px'
+        }}
+      >
+        <CardMedia image={Cedula} sx={{ height: '100px', width: '100%', maxWidth: 200, margin: 'auto' }}></CardMedia>
       </Box>
       <Box
         sx={{

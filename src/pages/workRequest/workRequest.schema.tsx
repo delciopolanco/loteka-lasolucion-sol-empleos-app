@@ -9,9 +9,7 @@ const Step1 = Yup.object().shape({
 
 const Step2 = Yup.object().shape({
   phone: Yup.string().required(i18n.t('workRequestForm.validations.phone')).nullable(),
-  identification: Yup.string()
-    .required(i18n.t('workRequestForm.validations.identification'))
-    .nullable(),
+  identification: Yup.string().required(i18n.t('workRequestForm.validations.identification')).nullable(),
   fullName: Yup.string().required(i18n.t('workRequestForm.validations.fullName')).nullable()
 });
 

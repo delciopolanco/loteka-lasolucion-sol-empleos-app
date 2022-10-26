@@ -85,7 +85,12 @@ export const Login: FC<PropsLogin> = () => {
                     />
                   </Box>
                   <FeatureWrapper
-                    sx={{ display: 'grid', gridTemplateColumns: '1fr', gap: '1rem', p: 5 }}
+                    sx={{
+                      display: 'grid',
+                      gridTemplateColumns: '1fr',
+                      gap: '1rem',
+                      p: 5
+                    }}
                   >
                     <Typography variant={'h4'} color={'primary.main'} textAlign={'center'}>
                       Inicio de sesión
@@ -94,13 +99,7 @@ export const Login: FC<PropsLogin> = () => {
                       <Input name={'username'} label={'Usuario'} variant={'standard'} fullWidth />
                     </FormControl>
                     <FormControl>
-                      <Input
-                        name={'password'}
-                        type={'password'}
-                        variant={'standard'}
-                        label={'Contraseña'}
-                        fullWidth
-                      />
+                      <Input name={'password'} type={'password'} variant={'standard'} label={'Contraseña'} fullWidth />
                     </FormControl>
                     <Button onClick={() => submitForm()} sx={{ mt: 3 }} variant={'contained'}>
                       Iniciar

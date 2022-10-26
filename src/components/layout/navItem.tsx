@@ -46,9 +46,7 @@ export const NavItem: FC<NavItemProps> = (props) => {
         {...other}
       >
         <Button
-          endIcon={
-            !open ? <ChevronRightIcon fontSize={'small'} /> : <ExpandMoreIcon fontSize={'small'} />
-          }
+          endIcon={!open ? <ChevronRightIcon fontSize={'small'} /> : <ExpandMoreIcon fontSize={'small'} />}
           onClick={handleToggle}
           startIcon={icon}
           sx={{

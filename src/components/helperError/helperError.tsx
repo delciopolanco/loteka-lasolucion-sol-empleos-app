@@ -13,9 +13,7 @@ export const HelperError: FC<HelperErrorProps> = ({ field, withTouched }) => {
   const { errors, touched } = useFormikContext();
 
   const error = getIn(errors, field);
-  const hasError = withTouched
-    ? getIn(errors, field) && getIn(touched, field)
-    : getIn(errors, field);
+  const hasError = withTouched ? getIn(errors, field) && getIn(touched, field) : getIn(errors, field);
 
   if (!hasError) return null;
 

@@ -1,14 +1,5 @@
-import { Button, FeatureWrapper, Input, Page, Select } from '@components';
-import {
-  Box,
-  CardContent,
-  CardHeader,
-  Divider,
-  experimentalStyled,
-  FormControl,
-  Typography
-} from '@mui/material';
-import { Formik } from 'formik';
+import { Button, FeatureWrapper, Form, Input, Page, Select } from '@components';
+import { Box, CardContent, CardHeader, Divider, experimentalStyled, FormControl, Typography } from '@mui/material';
 import { FC } from 'react';
 import { useTranslation } from 'react-i18next';
 
@@ -40,7 +31,7 @@ export const CreateUser: FC<PropsCreateUser> = () => {
   };
 
   return (
-    <Formik initialValues={{}} onSubmit={onSubmit}>
+    <Form initialValues={{}} onSubmit={onSubmit}>
       {({ handleBlur }) => {
         return (
           <Page maxWidth={'md'} backText={t('users')}>
@@ -57,29 +48,21 @@ export const CreateUser: FC<PropsCreateUser> = () => {
               <Content>
                 <Typography variant={'h6'}>{t('generalData')}</Typography>
                 <FormControl>
-                  <Input name='fullName' label={'Nombre Completo'} fullWidth onBlur={handleBlur} />
+                  <Input name="fullName" label={'Nombre Completo'} fullWidth onBlur={handleBlur} />
                 </FormControl>
                 <FormControl>
-                  <Input name='title' label={'Cargo ocupante'} fullWidth onBlur={handleBlur} />
+                  <Input name="title" label={'Cargo ocupante'} fullWidth onBlur={handleBlur} />
                 </FormControl>
-                <Divider
-                  variant={'middle'}
-                  sx={{ maxWidth: '454px', width: '100%', margin: '2rem auto' }}
-                />
+                <Divider variant={'middle'} sx={{ maxWidth: '454px', width: '100%', margin: '2rem auto' }} />
                 <Typography variant={'h6'}>{t('sesionData')}</Typography>
                 <FormControl>
-                  <Input
-                    name='username'
-                    label={'Nombre de usuario'}
-                    fullWidth
-                    onBlur={handleBlur}
-                  />
+                  <Input name="username" label={'Nombre de usuario'} fullWidth onBlur={handleBlur} />
                 </FormControl>
                 <FormControl>
-                  <Select items={Roles} name='rol' label={'Rol'} fullWidth onBlur={handleBlur} />
+                  <Select items={Roles} name="rol" label={'Rol'} fullWidth onBlur={handleBlur} />
                 </FormControl>
                 <FormControl>
-                  <Input name='Cargo' label={'Nombre Completo'} fullWidth onBlur={handleBlur} />
+                  <Input name="Cargo" label={'Nombre Completo'} fullWidth onBlur={handleBlur} />
                 </FormControl>
 
                 <Divider />
@@ -107,6 +90,6 @@ export const CreateUser: FC<PropsCreateUser> = () => {
           </Page>
         );
       }}
-    </Formik>
+    </Form>
   );
 };

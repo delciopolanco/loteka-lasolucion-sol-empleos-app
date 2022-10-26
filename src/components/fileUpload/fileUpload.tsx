@@ -1,17 +1,7 @@
 import { FC, useState } from 'react';
 import { useDropzone } from 'react-dropzone';
 import { useTranslation } from 'react-i18next';
-import {
-  Box,
-  IconButton,
-  Link,
-  List,
-  ListItem,
-  ListItemIcon,
-  ListItemText,
-  Typography,
-  Stack
-} from '@mui/material';
+import { Box, IconButton, Link, List, ListItem, ListItemIcon, ListItemText, Typography, Stack } from '@mui/material';
 import ImageIcon from '@mui/icons-material/Image';
 import AttachFileIcon from '@mui/icons-material/AttachFile';
 import CloseIcon from '@mui/icons-material/Close';
@@ -65,8 +55,8 @@ export const FileUpload: FC<FileUpload> = ({ name }) => {
                 }}
               >
                 <ListItemIcon sx={{ alignItems: 'center' }}>
-                  <AttachFileIcon fontSize='small' />
-                  <ImageIcon fontSize='large' />
+                  <AttachFileIcon fontSize="small" />
+                  <ImageIcon fontSize="large" />
                 </ListItemIcon>
                 <ListItemText
                   primary={file.name}
@@ -78,12 +68,10 @@ export const FileUpload: FC<FileUpload> = ({ name }) => {
                 />
 
                 <IconButton
-                  edge='end'
-                  onClick={() =>
-                    setFiles((prevFiles) => prevFiles.filter((_file) => _file.name !== file.name))
-                  }
+                  edge="end"
+                  onClick={() => setFiles((prevFiles) => prevFiles.filter((_file) => _file.name !== file.name))}
                 >
-                  <CloseIcon fontSize='small' />
+                  <CloseIcon fontSize="small" />
                 </IconButton>
               </ListItem>
             ))}
@@ -130,19 +118,16 @@ export const FileUpload: FC<FileUpload> = ({ name }) => {
               <img src={Cedula} width={120} height={80} />
             </Box>
             <Box sx={{ p: 2 }}>
-              <Typography variant='h6'>{`${t('fileUpload.title')} (${t(
-                'fileUpload.isRequired'
-              )})`}</Typography>
+              <Typography variant="h6">{`${t('fileUpload.title')} (${t('fileUpload.isRequired')})`}</Typography>
               <Box sx={{ mt: 2 }}>
-                <Typography variant='body1' fontSize={14} mb={1}>
-                  {`${t('fileUpload.howTo1')} `}{' '}
-                  <Link underline='always'>{t('fileUpload.howTo2')}</Link>
+                <Typography variant="body1" fontSize={14} mb={1}>
+                  {`${t('fileUpload.howTo1')} `} <Link underline="always">{t('fileUpload.howTo2')}</Link>
                   {` ${t('fileUpload.howTo3')}`}
                 </Typography>
-                <Typography variant='body1' fontSize={12}>
+                <Typography variant="body1" fontSize={12}>
                   {t('fileUpload.supportedFileTypes')}
                 </Typography>
-                <Typography variant='body1' fontSize={12}>
+                <Typography variant="body1" fontSize={12}>
                   {`${t('fileUpload.qty')} - ${t('fileUpload.maxFileSize')}`}
                 </Typography>
               </Box>

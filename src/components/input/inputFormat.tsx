@@ -11,13 +11,7 @@ type InputFormatProps = NumberFormatProps & {
   fullWidth?: boolean;
 };
 
-export const InputFormat: FC<InputFormatProps> = ({
-  name,
-  onChange,
-  onBlur,
-  format,
-  fullWidth
-}) => {
+export const InputFormat: FC<InputFormatProps> = ({ name, onChange, onBlur, format, fullWidth }) => {
   const [field, { error }] = useField(name);
   const { setFieldValue } = useFormikContext();
   return (

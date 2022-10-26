@@ -67,22 +67,10 @@ export const Filters: FC<PropsFilters> = () => {
           />
         </Grid>
         <Grid item md={2} xs={12}>
-          <Select
-            name={'city'}
-            size={'small'}
-            items={Cities}
-            fullWidth
-            label={t('candidatesPage.filters.city')}
-          />
+          <Select name={'city'} size={'small'} items={Cities} fullWidth label={t('candidatesPage.filters.city')} />
         </Grid>
         <Grid item md={2} xs={12}>
-          <Select
-            name={'zone'}
-            size={'small'}
-            items={Zones}
-            fullWidth
-            label={t('candidatesPage.filters.zone')}
-          />
+          <Select name={'zone'} size={'small'} items={Zones} fullWidth label={t('candidatesPage.filters.zone')} />
         </Grid>
         <Grid item md={2} xs={12} display={'flex'} alignItems={'center'}>
           <LabelMenu

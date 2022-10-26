@@ -1,6 +1,6 @@
 import { Box, Container, experimentalStyled } from '@mui/material';
-import { currentStepSelector } from '@components';
-import { Formik, FormikValues } from 'formik';
+import { currentStepSelector, Form } from '@components';
+import { FormikValues } from 'formik';
 import { useRecoilValue } from 'recoil';
 import { Complete } from './features/complete';
 import { useScrollReset } from '@hooks';
@@ -30,7 +30,7 @@ export const WorkRequest = () => {
   };
 
   return (
-    <Formik
+    <Form
       initialValues={{
         role: 'Agente de ventas',
         city: '',
@@ -42,18 +42,14 @@ export const WorkRequest = () => {
       validationSchema={workRequestSchema[currentStep]}
       onSubmit={submitHandler}
     >
-      {() => {
-        return (
-          <Root>
-            <Container sx={{ pt: '80px', justifyContent: 'center' }}>
-              <Box sx={{ display: 'grid', gridTemplateColumns: '1fr', gap: 2 }}>
-                {currentStep < 3 && <WorkStepper />}
-                {currentStep >= 3 && <Complete />}
-              </Box>
-            </Container>
-          </Root>
-        );
-      }}
-    </Formik>
+      <Root>
+        <Container sx={{ pt: '80px', justifyContent: 'center' }}>
+          <Box sx={{ display: 'grid', gridTemplateColumns: '1fr', gap: 2 }}>
+            {currentStep < 3 && <WorkStepper />}
+            {currentStep >= 3 && <Complete />}
+          </Box>
+        </Container>
+      </Root>
+    </Form>
   );
 };

@@ -17,12 +17,7 @@ interface NavSectionProps extends ListProps {
   title: string;
 }
 
-const reduceChildRoutes = (
-  acc: JSX.Element[],
-  pathname: string,
-  item: Item,
-  depth: number
-): Array<JSX.Element> => {
+const reduceChildRoutes = (acc: JSX.Element[], pathname: string, item: Item, depth: number): Array<JSX.Element> => {
   const key = `${item.title}-${depth}`;
   const exactMatch = item.path
     ? !!matchPath(
@@ -79,19 +74,8 @@ const reduceChildRoutes = (
   return acc;
 };
 
-const renderNavItems = ({
-  depth = 0,
-  items,
-  pathname
-}: {
-  items: Item[];
-  pathname: string;
-  depth?: number;
-}) => {
-  const children = items.reduce(
-    (acc: JSX.Element[], item: Item) => reduceChildRoutes(acc, pathname, item, depth),
-    []
-  );
+const renderNavItems = ({ depth = 0, items, pathname }: { items: Item[]; pathname: string; depth?: number }) => {
+  const children = items.reduce((acc: JSX.Element[], item: Item) => reduceChildRoutes(acc, pathname, item, depth), []);
 
   return <List disablePadding>{children}</List>;
 };

@@ -1,9 +1,5 @@
 import { FC } from 'react';
-import {
-  Breadcrumbs as MuiBreadcrumbs,
-  BreadcrumbsProps as MuiBreadcrumbsProps,
-  Grid
-} from '@mui/material';
+import { Breadcrumbs as MuiBreadcrumbs, BreadcrumbsProps as MuiBreadcrumbsProps, Grid } from '@mui/material';
 import ArrowBackIosNewOutlinedIcon from '@mui/icons-material/ArrowBackIosNewOutlined';
 import { Breadcrumb, BreadcrumbProps } from './breadcrumbs';
 

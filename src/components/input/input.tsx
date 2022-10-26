@@ -22,9 +22,7 @@ export const Input: FC<InputProps> = ({ name, showCharCount, onChange, onBlur, .
         onBlur={onBlur || field.onBlur}
         InputProps={{
           endAdornment: showCharCount ? (
-            <InputAdornment position={'end'}>{`${
-              value?.length || 0
-            } /${charCounts}`}</InputAdornment>
+            <InputAdornment position={'end'}>{`${value?.length || 0} /${charCounts}`}</InputAdornment>
           ) : null
         }}
       />

@@ -42,7 +42,14 @@ export const Select: FC<SelectProps> = ({
       <MuiSelect
         size={size}
         error={Boolean(error)}
-        {...{ ...r, label, labelId, variant: 'outlined', autoWidth: autoWidth || false, value }}
+        {...{
+          ...r,
+          label,
+          labelId,
+          variant: 'outlined',
+          autoWidth: autoWidth || false,
+          value
+        }}
       >
         {children ||
           items.map(({ label: itemLabel, value: itemValue }) => (

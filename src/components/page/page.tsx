@@ -41,8 +41,7 @@ export const Page: FC<PageProps> = ({
         <Box sx={{ mb: 2 }}>
           <Breadcrumbs>
             {breadCrumbs.map((b) => {
-              if (b.label)
-                return <Breadcrumb key={`${uniqueId(b.label)}`} label={b.label} path={b.path} />;
+              if (b.label) return <Breadcrumb key={`${uniqueId(b.label)}`} label={b.label} path={b.path} />;
             })}
           </Breadcrumbs>
         </Box>

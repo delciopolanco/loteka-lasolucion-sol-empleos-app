@@ -65,11 +65,7 @@ export const NavBar: FC<NavBarProps> = ({ children, showHamburger, onSidebarMobi
     <AppBar elevation={0} sx={{ backgroundImage: `url(${bgBlue})`, color: 'text.secondary' }}>
       <Toolbar sx={{ minHeight: 64 }}>
         {showHamburger && (
-          <IconButton
-            color={'inherit'}
-            onClick={onSidebarMobileOpen}
-            sx={{ display: { lg: 'none' }, mr: 2 }}
-          >
+          <IconButton color={'inherit'} onClick={onSidebarMobileOpen} sx={{ display: { lg: 'none' }, mr: 2 }}>
             <MenuIcon fontSize={'medium'} sx={{ color: theme.palette.primary.contrastText }} />
           </IconButton>
         )}
@@ -105,21 +101,13 @@ export const NavBar: FC<NavBarProps> = ({ children, showHamburger, onSidebarMobi
           </Typography>
         </Box>
         <Box sx={{ flexGrow: 1, ml: 2 }}></Box>
-        <Box
-          sx={{ display: { md: 'initial', xs: 'none' } }}
-          textAlign={'right'}
-          color={'primary.contrastText'}
-        >
+        <Box sx={{ display: { md: 'initial', xs: 'none' } }} textAlign={'right'} color={'primary.contrastText'}>
           <Typography>{auth.user?.name}</Typography>
           <Typography>{auth.user?.jobRole}</Typography>
         </Box>
         <Box sx={{ ml: 2 }}>
           <Box component={ButtonBase} sx={{ alignItems: 'center', display: 'flex' }}>
-            <StyledBadge
-              overlap='circular'
-              anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
-              variant='dot'
-            >
+            <StyledBadge overlap="circular" anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }} variant="dot">
               <Avatar
                 sx={{
                   height: 42,

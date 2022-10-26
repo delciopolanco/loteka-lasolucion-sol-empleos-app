@@ -32,12 +32,12 @@ export const LabelMenu: FC<PropsLabelMenu> = ({ options, label }) => {
 
   return (
     <div>
-      <IconButton onClick={handleClickListItem} aria-label='delete'>
+      <IconButton onClick={handleClickListItem} aria-label="delete">
         <Typography variant={'body2'}>{`${label} : ${selectedOption.label}`}</Typography>
         <ExpandMoreOutlinedIcon fontSize={'small'} />
       </IconButton>
       <Menu
-        id='lock-menu'
+        id="lock-menu"
         anchorEl={anchorEl}
         open={open}
         onClose={handleClose}

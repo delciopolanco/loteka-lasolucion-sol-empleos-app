@@ -1,7 +1,7 @@
-import { Page } from '@components';
+import { Form, Page } from '@components';
 import { Pagination } from '@components/pagination';
 import { Grid } from '@mui/material';
-import { Formik, FormikValues } from 'formik';
+import { FormikValues } from 'formik';
 import { FC } from 'react';
 import { useTranslation } from 'react-i18next';
 import { CadidateCard } from './features/candidateCard';
@@ -18,7 +18,7 @@ export const Candidates: FC<CandidatesProps> = () => {
 
   return (
     <Page headerText={`100 ${t('candidates')}`}>
-      <Formik initialValues={{}} onSubmit={onSearchHandle}>
+      <Form initialValues={{}} onSubmit={onSearchHandle}>
         {() => {
           return (
             <Grid container flexDirection={'column'} gap={1}>
@@ -27,9 +27,12 @@ export const Candidates: FC<CandidatesProps> = () => {
               </Grid>
               <Grid my={1}>
                 <Pagination
-                  sx={{ display: 'flex', justifyContent: { md: 'flex-end', xs: 'center' } }}
+                  sx={{
+                    display: 'flex',
+                    justifyContent: { md: 'flex-end', xs: 'center' }
+                  }}
                   variant={'outlined'}
-                  color='primary'
+                  color="primary"
                   count={8}
                   page={1}
                 />
@@ -44,7 +47,7 @@ export const Candidates: FC<CandidatesProps> = () => {
             </Grid>
           );
         }}
-      </Formik>
+      </Form>
     </Page>
   );
 };

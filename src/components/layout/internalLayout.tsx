@@ -43,14 +43,8 @@ export const InternalLayout: FC<InternalLayoutProps> = () => {
 
   return (
     <InternalLayoutRoot>
-      <NavBar
-        showHamburger
-        onSidebarMobileOpen={() => setIsSidebarMobileOpen(!isSideBarMobileOpen)}
-      />
-      <Sidebar
-        onMobileClose={() => setIsSidebarMobileOpen(false)}
-        openMobile={isSideBarMobileOpen}
-      />
+      <NavBar showHamburger onSidebarMobileOpen={() => setIsSidebarMobileOpen(!isSideBarMobileOpen)} />
+      <Sidebar onMobileClose={() => setIsSidebarMobileOpen(false)} openMobile={isSideBarMobileOpen} />
       <InternalLayoutWrapper>
         <InternalLayoutContainer>
           <InternalLayoutContent>

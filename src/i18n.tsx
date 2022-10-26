@@ -62,8 +62,7 @@ const resources = {
         completeSteps: 'Completa los 3 pasos a continuación para aplicar a esta vacante',
         confidential: 'Los datos suministrados se evaluarán de forma confidencial.',
         youSentWorkRequest: '¡ Has enviado tu solicitud !',
-        afterSentWorkMessage:
-          'Estaremos evaluando tu datos y nos pondremos en contacto contigo a mayor brevedad.',
+        afterSentWorkMessage: 'Estaremos evaluando tu datos y nos pondremos en contacto contigo a mayor brevedad.',
         validations: {
           city: 'Debe seleccionar su provincia en la lista',
           zone: 'Debe seleccionar su municipio de la lista',

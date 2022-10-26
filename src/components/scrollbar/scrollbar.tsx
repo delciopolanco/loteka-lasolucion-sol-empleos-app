@@ -8,9 +8,7 @@ type ScrollbarProps = PerfectScrollbarProps & {};
 export const Scrollbar = forwardRef<HTMLDivElement, ScrollbarProps>((props, ref) => {
   const { children, ...other } = props;
 
-  const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
-    navigator.userAgent
-  );
+  const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
 
   if (isMobile) {
     return (

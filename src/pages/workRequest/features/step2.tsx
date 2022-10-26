@@ -36,13 +36,7 @@ export const Step2: FC<Step2Props> = ({ children }) => {
             {t('workRequestForm.fullName')}
           </Typography>
           <FormControl fullWidth>
-            <Input
-              showCharCount
-              name={'fullName'}
-              onChange={handleChange}
-              error={Boolean(errors.fullName)}
-              fullWidth
-            />
+            <Input showCharCount name={'fullName'} onChange={handleChange} error={Boolean(errors.fullName)} fullWidth />
           </FormControl>
         </Grid>
         <Grid item>
