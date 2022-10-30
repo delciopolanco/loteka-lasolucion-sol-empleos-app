@@ -8,6 +8,10 @@ type PropsForm = FormikConfig<FormikValues> & {
   onSubmit: (v: FormikValues) => void;
 };
 
+const Manage = ({ children, ...others }) => {
+  return children(others);
+}
+
 export const Form: FC<PropsForm> = ({ children, ...others }) => {
   const showDevTools = process.env.NODE_ENV === 'development';
   return (
@@ -15,7 +19,9 @@ export const Form: FC<PropsForm> = ({ children, ...others }) => {
       {() => {
         return (
           <FormikForm>
-            {children}
+            <Manage>
+              {children}
+            </Manage>
             {showDevTools && <FormikDevTools />}
           </FormikForm>
         );
